@@ -1,0 +1,18 @@
+CXX = g++
+CXXFLAGS = -Wall 
+TARGET = a
+OBJ = Main.o Matrix.o
+
+all: $(TARGET)
+
+$(TARGET): $(OBJ)
+	$(CXX) $(OBJ) -o $(TARGET)
+
+main.o: Main.cpp Matrix.h
+	$(CXX) $(CXXFLAGS) -c main.cpp
+
+set.o: Main.cpp Matrix.h
+	$(CXX) $(CXXFLAGS) -c set.cpp
+
+clean:
+	rm -f $(OBJ) $(TARGET)
